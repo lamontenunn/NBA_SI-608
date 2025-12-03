@@ -15,18 +15,6 @@ def extract_player_id(raw):
         return parts[1]
     return s
 
-def extract_player_name(raw):
-    """
-    Extract 'A. Drummond' from 'A. Drummond - drumman01'.
-    """
-    if pd.isna(raw):
-        return np.nan
-    s = str(raw)
-    parts = s.split(" - ")
-    if len(parts) == 2:
-        return parts[0]
-    return s
-
 def make_player_events(pbp: pd.DataFrame) -> pd.DataFrame:
     """
     Make a long-format table of player-game-team 'events' from:
@@ -70,7 +58,6 @@ def make_player_events(pbp: pd.DataFrame) -> pd.DataFrame:
     long = long[long["raw_player"].notna() & (long["raw_player"].astype(str).str.strip() != "")]
 
     long["player_id"] = long["raw_player"].apply(extract_player_id)
-    long["player_name"] = long["raw_player"].apply(extract_player_name)
     long["team_id"] = long["event_team"]
 
     # Keep just what we need for later
@@ -82,7 +69,6 @@ def make_player_events(pbp: pd.DataFrame) -> pd.DataFrame:
             "Date",
             "team_id",
             "player_id",
-            "player_name",
             "role",
             "Quarter",
             "SecLeft",
