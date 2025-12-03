@@ -4,7 +4,7 @@ import pandas as pd
 def compute_player_usage(events_long: pd.DataFrame) -> pd.DataFrame:
     """
     Crude usage metric: count of high-impact events per (season, team, player).
-    We’ll use roles that clearly belong to the team with the ball:
+    We'll use roles that clearly belong to the team with the ball:
       Shooter, Assister, Rebounder, TurnoverPlayer, FreeThrowShooter.
     """
     impact_roles = ["Shooter", "Assister", "Rebounder", "TurnoverPlayer", "FreeThrowShooter"]
