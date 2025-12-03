@@ -1,0 +1,6 @@
+.venv
+/NBA-Data
+__pycache__/
+.DS_Store
+.kaggle/
+tempCodeRunnerFile.py
