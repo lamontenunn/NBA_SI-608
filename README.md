@@ -19,7 +19,7 @@ The project includes:
 
 Clone the repo:
 ```
-git clone https://github.com/<your-repo>/NBA-Project.git
+git clone git@github.com:lamontenunn/NBA_SI-608.git
 cd NBA-Project
 ```
 
