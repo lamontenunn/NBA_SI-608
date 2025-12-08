@@ -161,5 +161,3 @@ Major libraries:
 - The notebook and script both reproduce the full analysis pipeline.
 
 ---
-
-Enjoy exploring NBA passing networks and team dynamics!
